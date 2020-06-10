@@ -1,0 +1,17 @@
+Controllers:
+
+create a new task - POST - /api/v1/tasks
+delete an existing task - DELETE - /api/v1/tasks/{id}
+Get a specific task - GET - /api/v1/tasks/{id}
+Search for tasks - GET -/api/v1/tasks?name=xxx&status=2
+Update an existing task  - PUT - /api/v1/tasks/{id}
+
+
+Entity:
+    Task:
+        id
+        title
+        description
+        status
+        createdAt
+        updatedAt

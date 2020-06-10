@@ -1,3 +1,14 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+create_task:
+   path: /api/v1/tasks
+   controller: App\Controller\TaskController::create
+   methods: POST
+
+find_all_task:
+   path: /api/v1/tasks
+   controller: App\Controller\TaskController::findAll
+   methods: GET
+
+find_task_by_id:
+   path: /api/v1/tasks/{id<\d+>}
+   controller: App\Controller\TaskController::findById
+   methods: GET
