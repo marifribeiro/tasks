@@ -32,9 +32,18 @@ class TaskRepository extends ServiceEntityRepository
     /**
      * @return void
      */
-    public function update(): void
+    public function update(Task $task): void
     {
         // _em is EntityManager which is DI by the base class
+        $this->_em->flush();
+    }
+
+    /**
+     * @return void
+     */
+    public function delete(Task $task): void
+    {
+        $this->_em->remove($task);
         $this->_em->flush();
     }
 }

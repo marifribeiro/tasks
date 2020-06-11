@@ -53,7 +53,7 @@ abstract class AbstractEntity {
     /**
      * @ORM\PreUpdate
      */
-    public function setUpdatedA(): self
+    public function setUpdatedAt(): self
     {
         $this->updatedAt = new \DateTime();
 

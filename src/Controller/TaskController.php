@@ -39,7 +39,7 @@ class TaskController extends AbstractController
      */
     public function update(int $id, Request $request): JsonResponse
     {
-        return  $this->json([]);
+        return  $this->json($this->taskService->update($id, $request));
     }
 
     /**
@@ -63,7 +63,7 @@ class TaskController extends AbstractController
      */
     public function delete(int $id): JsonResponse
     {
-        return  $this->json([]);
+        return  $this->json($this->taskService->delete($id));
     }
 
 }

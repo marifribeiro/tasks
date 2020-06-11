@@ -12,3 +12,8 @@ find_task_by_id:
    path: /api/v1/tasks/{id<\d+>}
    controller: App\Controller\TaskController::findById
    methods: GET
+
+delete_task:
+   path: /api/v1/tasks/{id<\d+>}
+   controller: App\Controller\TaskController::delete
+   methods: DELETE
