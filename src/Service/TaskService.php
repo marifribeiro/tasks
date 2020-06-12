@@ -30,9 +30,9 @@ class TaskService
        return $this->taskRepository->findAll();
    }
 
-   public function update(int $id, Task $task)
+   public function update(Task $task)
    {
-       return $this->taskRepository->update($id, $task);
+       return $this->taskRepository->save($task);
    }
 
    public function delete(int $id)

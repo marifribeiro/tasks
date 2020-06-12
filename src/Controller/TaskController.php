@@ -39,7 +39,15 @@ class TaskController extends AbstractController
      */
     public function update(int $id, Request $request): JsonResponse
     {
-        return  $this->json($this->taskService->update($id, $request));
+        $task = $this->taskService->findById($id);
+        $data = json_decode($request->getContent(), true);
+
+        empty($data['title']) ? true : $task->setTitle($data['title']);
+        empty($data['description']) ? true : $task->setDescription($data['description']);
+        empty($data['status']) ? true : $task->setStatus($data['status']);
+        $task->setUpdatedAt(new \DateTime());
+
+        return $this->json($this->taskService->update($task));
     }
 
     /**
